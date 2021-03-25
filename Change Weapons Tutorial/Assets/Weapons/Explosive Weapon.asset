@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a480742c77498664f9d5e93c395db0c6, type: 3}
+  m_Name: Explosive Weapon
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8305812566347233257, guid: 981727ccf122b4342ab88366567f6c57, type: 3}
+  attackTimer: 1
+  attackDamage: 2
