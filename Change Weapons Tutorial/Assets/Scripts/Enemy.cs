@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
+    public int health = 10;
 }

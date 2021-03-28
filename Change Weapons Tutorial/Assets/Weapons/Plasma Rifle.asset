@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a480742c77498664f9d5e93c395db0c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 815acf472f4dc8c498e0317f969d23fd, type: 3}
   m_Name: Plasma Rifle
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 840065613173368855, guid: cad9a7b9571af7d41949cd108c864146, type: 3}
-  attackTimer: 0.1
-  attackDamage: 3
+  bulletPrefab: {fileID: 288946914127923585, guid: f7f8e92dd81eefb4b9aaccde1de4ffda, type: 3}
+  attackTimer: 0.25
+  attackDamage: 5
+  bulletSpeed: 25

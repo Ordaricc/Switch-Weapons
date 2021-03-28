@@ -158,8 +158,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.28368637, g: 0.30334008, b: 0.4811321, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.4745098, g: 0.19215688, b: 0.37547883, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -175,18 +175,18 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -298,13 +298,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 530264240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b516fbe29c1604681431c72bfadcf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3177d514a2fa91b40baa64ac18f6419d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsInPossesion:
-  - {fileID: 11400000, guid: 8621b7908a7178441be13b348ba3aefd, type: 2}
-  - {fileID: 11400000, guid: aabe16091368f4441bb1d1eb3cd7c305, type: 2}
-  - {fileID: 11400000, guid: 8fe753735c0f0244798a91e4bd78644b, type: 2}
+  allWeaponsInPossession:
+  - {fileID: 11400000, guid: bca69d376b4b96a40ae115985d3f8427, type: 2}
+  - {fileID: 11400000, guid: 0aaa526e747b1134892f64c9d6658fa3, type: 2}
+  - {fileID: 11400000, guid: 9542d28e3c7da5446b0a2ea78f2e932f, type: 2}
   attackTimer: 0
 --- !u!1 &1276144065
 GameObject:
@@ -403,7 +403,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000035762787, y: 0}
+  m_Offset: {x: 0.06265563, y: -0.19841194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -414,7 +414,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.153282, y: 5.12}
+  m_Size: {x: 1.9871823, y: 4.723176}
   m_EdgeRadius: 0
 --- !u!114 &1276144069
 MonoBehaviour:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276144065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f684798f9a0c34f86cba558cee096a, type: 3}
+  m_Script: {fileID: 11500000, guid: dc17f27c175dbf44aa1017cf0645ce1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 10

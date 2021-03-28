@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public SOWeapon[] weaponsInPossesion;
+    public SOWeapon[] allWeaponsInPossession;
     private int currentWeaponIndex;
 
     private SOWeapon currentWeapon;
@@ -10,34 +10,35 @@ public class PlayerShooting : MonoBehaviour
 
     private void Awake()
     {
-        currentWeapon = weaponsInPossesion[0];
+        //set current weapon to element 0 of weapon array
+        currentWeapon = allWeaponsInPossession[0];
     }
 
     private void Update()
     {
-        //take input and try switch weapon
         TrySwitchWeapon();
-
-        //decrease attack timer and get input to shoot
         TryShoot();
     }
 
     private void TrySwitchWeapon()
     {
-        //take input
-        int newWeaponIndex = currentWeaponIndex;
-        if (Input.GetKeyDown(KeyCode.E))
-            newWeaponIndex++;
-        else if (Input.GetKeyDown(KeyCode.Q))
-            newWeaponIndex--;
+        //we calculate which weapon we're gonna load before we load it
+        int weaponIndexToGoTo = currentWeaponIndex;
+        if (Input.GetKeyDown(KeyCode.Q))
+            weaponIndexToGoTo--;
+        else if (Input.GetKeyDown(KeyCode.E))
+            weaponIndexToGoTo++;
 
-        if (newWeaponIndex == currentWeaponIndex || newWeaponIndex < 0 || newWeaponIndex == weaponsInPossesion.Length)
+        //if that weapon doesn't exist, because it's outside the weapon array
+        //or it's the same weapon we have now, we return
+        if (weaponIndexToGoTo < 0 
+            || weaponIndexToGoTo == allWeaponsInPossession.Length 
+            || weaponIndexToGoTo == currentWeaponIndex)
             return;
 
-        //switch weapon
-        currentWeapon = weaponsInPossesion[newWeaponIndex];
-        currentWeaponIndex = newWeaponIndex;
-        attackTimer = currentWeapon.attackTimer;
+        //switch weapon and update current weapon index
+        currentWeapon = allWeaponsInPossession[weaponIndexToGoTo];
+        currentWeaponIndex = weaponIndexToGoTo;
     }
 
     private void TryShoot()
@@ -45,22 +46,22 @@ public class PlayerShooting : MonoBehaviour
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
 
-        //take player inputs
-        if (Input.GetKeyDown(KeyCode.Return))
+        //if cooldown is ready, take player input and shoot
+        if (attackTimer <= 0 && Input.GetKeyDown(KeyCode.L))
         {
-            if (attackTimer <= 0)
-            {
-                attackTimer = currentWeapon.attackTimer;
-                Shoot();
-            }
+            //reset the attack timer based on our current weapon's info
+            attackTimer = currentWeapon.attackTimer;
+            Shoot();
         }
     }
 
     private void Shoot()
     {
-        //shoot currentweapon's bullet
+        //fire current weapon's bullet
         GameObject spawnedBullet = Instantiate(currentWeapon.bulletPrefab, transform.position, Quaternion.identity);
-        spawnedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(9, 0);
-        spawnedBullet.GetComponent<Bullet>().bulletDamage = currentWeapon.attackDamage;
+        //give it a velocity to the right, with the speed based on the current weapon
+        spawnedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(currentWeapon.bulletSpeed, 0);
+        //set the bullet's script damage value based on our current weapon
+        spawnedBullet.GetComponent<Bullet>().attackDamage = currentWeapon.attackDamage;
     }
 }
