@@ -53,10 +53,14 @@
     <UnityVersion>2020.3.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerShooting.cs" />
-    <Compile Include="Assets\Scripts\SOWeapon.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\PlayerShooting.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\SOWeapon.cs" />
+    <Compile Include="Assets\PlayerInventory.cs" />
+    <Compile Include="Assets\WeaponDrop.cs" />
+    <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\WeaponSlotUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
