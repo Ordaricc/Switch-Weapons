@@ -16,3 +16,5 @@ MonoBehaviour:
   attackTimer: 0.25
   attackDamage: 5
   bulletSpeed: 25
+  magSize: 6
+  reloadTime: 0.5

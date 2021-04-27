@@ -7,4 +7,7 @@ public class SOWeapon : ScriptableObject
     public float attackTimer = 1;
     public int attackDamage = 1;
     public float bulletSpeed = 9;
+
+    public int magSize = 3;
+    public float reloadTime = 2;
 }

@@ -151,7 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &139625517
 PrefabInstance:
@@ -304,7 +304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.85662967}
   m_AnchorMax: {x: 0.266875, y: 1}
-  m_AnchoredPosition: {x: -5.0438232, y: 2.979126}
+  m_AnchoredPosition: {x: -5.0439453, y: 2.979126}
   m_SizeDelta: {x: -10.0876465, y: -5.958313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168506113
@@ -435,7 +435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384998839
 GameObject:
@@ -744,6 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 530264244}
   attackTimer: 0
+  isReloading: 0
+  reloadTime: 0
 --- !u!114 &530264244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,13 +758,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39d0cb733c930d4f8c74bb8802ac0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerShooting: {fileID: 530264243}
   weaponSlotsInUI:
   - {fileID: 1632468602355803145}
   - {fileID: 1431163219}
   - {fileID: 139625519}
-  allWeaponsInPossession:
-  - {fileID: 11400000, guid: bca69d376b4b96a40ae115985d3f8427, type: 2}
-  currentWeapon: {fileID: 0}
+  allWeaponsInPossessionInfo:
+  - SOweapon: {fileID: 11400000, guid: bca69d376b4b96a40ae115985d3f8427, type: 2}
+    bulletsLeft: 0
+  currentWeaponInfo:
+    SOweapon: {fileID: 0}
+    bulletsLeft: 0
 --- !u!61 &530264245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -944,7 +950,7 @@ Transform:
   m_LocalScale: {x: 0.3617, y: 0.3617, z: 0.3617}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1054464190 stripped
 RectTransform:
@@ -1449,7 +1455,7 @@ RectTransform:
   m_Children:
   - {fileID: 168506112}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
